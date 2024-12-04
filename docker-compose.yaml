@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: laravel_app
+    working_dir: /var/www/html
+    command: sh -c "composer install && php artisan migrate --force && php -S 0.0.0.0:8000 -t public"
+    volumes:
+      - .:/var/www/html
+      - ./docker/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+    ports:
+      - "8000:8000"
+
+
+
