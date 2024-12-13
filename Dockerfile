@@ -11,6 +11,4 @@ COPY --from=composer:2.6 /usr/bin/composer /usr/bin/composer
 
 COPY . /var/www/html
 
-RUN composer install --no-dev --optimize-autoloader
-
 EXPOSE 8000

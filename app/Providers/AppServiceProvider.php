@@ -19,11 +19,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::except([
-            'deactivateLink',
-            'regenerateLink',
-            'link/*',
-            'game',
-        ]);
+
     }
 }
