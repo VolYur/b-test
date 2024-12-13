@@ -18,12 +18,7 @@ class ProfileController
 
     public function __invoke(string $uuid): JsonResponse
     {
-
-
-
         try {
-
-
             $profile = $this->profileRepository->getOne($uuid);
 
             return new JsonResponse([
