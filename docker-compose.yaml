@@ -7,7 +7,7 @@ services:
       dockerfile: ./Dockerfile
     container_name: laravel_app
     working_dir: /var/www/html
-    command: sh -c "composer install && php -S 0.0.0.0:8000 -t public && php -S 0.0.0.0:8001 -t public"
+    command: sh -c "composer install && php -S 0.0.0.0:8000 -t public & php -S 0.0.0.0:8001 -t public"
     volumes:
       - .:/var/www/html
       - ./docker/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
